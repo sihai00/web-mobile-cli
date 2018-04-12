@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("common/header.html")
+<body>
+  <!-- page -->
+  <div class="index-page" id="js-page"></div>
+
+  <!-- nav -->
+  <div class="nav-wrap">
+    <div class="nav">
+      @@loop('common/loop-nav.html', [
+        { "name": "aaaa", "imgurl": "index-h", "url": "index" },
+        { "name": "bbbb", "imgurl": "equipment", "url": "bbbb" }
+      ])
+    </div>
+    <div class="nav-stand"></div>
+  </div>
+</body>
+@@include("common/script.html")
+<script src="js/page/index.js?rev=@@hash" defer></script>
+</html>

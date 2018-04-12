@@ -1,0 +1,33 @@
+// nav
+.nav-wrap{
+  width: 100%;
+  .nav-stand{
+    height: pxToVw(100);
+  }
+}
+.nav{
+  width: 100%;
+  height: pxToVw(100);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  .nav-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #5F5F5F;
+    font-size: pxToVw(24);
+    text-decoration: none;
+    flex: 1;
+    img{
+      width: pxToVw(54);
+      height: pxToVw(54);
+    }
+  }
+}
