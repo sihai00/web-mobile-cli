@@ -1,4 +1,4 @@
-# h5-cli
+# web-mobile-cli
 a tool to develop h5 project
 
 ## 目录

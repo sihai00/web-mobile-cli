@@ -1,5 +1,5 @@
 {
-  "name": "h5-cli",
+  "name": "web-mobile-cli",
   "version": "1.0.0",
   "description": "a tool to develop h5 project",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sihai00/h5-cli.git"
+    "url": "git@github.com:sihai00/web-mobile-cli.git"
   },
   "author": "sihai",
   "license": "ISC",
