@@ -8,12 +8,11 @@ program
   .option('-p, --port [port]', 'Add port')
   .parse(process.argv);
 
-// console.log('you ordered a pizza with:');
 if (program.projectname) {
   const name = program.projectname
   const url = packages.repository.url
 
-  exec(`mkdir test && cd test && git clone ${url} ${name}`, function(error, stdout, stderr){
+  exec(`git clone ${url} ${name}`, function(error, stdout, stderr){
     if(error) {
       console.error('error: ' + error);
       return;

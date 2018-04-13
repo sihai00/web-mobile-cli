@@ -1,6 +1,6 @@
 {
   "name": "web-mobile-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a tool to develop h5 project",
   "main": "index.js",
   "bin": {"web-mobile-cli": "bin/web-mobile-cli"},
