@@ -40,7 +40,7 @@ npm run build
 > **注意**：运行npm start后如果白屏或者出错，请手动刷新一次，导致的原因可能是browser-sync启动浏览器的时候还没有打包完成
 
 ## html
-集合了[gulp-file-include]('https://github.com/coderhaoxin/gulp-file-include')，可抽离出一部分公共静态的html片段，重复使用。
+集合了[gulp-file-include](https://github.com/coderhaoxin/gulp-file-include)，可抽离出一部分公共静态的html片段，重复使用。
 ```html
 <!-- a.html -->
 <div>a.html</div>
@@ -59,7 +59,7 @@ npm run build
 ```
 
 ## sass
-默认设计图为750，通过[vw方案]('https://www.w3cplus.com/css/vw-for-layout.html')自动适配
+默认设计图为750，通过[vw方案](https://www.w3cplus.com/css/vw-for-layout.html)自动适配
 
 ```scss
 $baseFontSize: 7.5;
