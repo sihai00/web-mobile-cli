@@ -35,6 +35,9 @@ npm start
 npm run build
 ```
 
+**注意**
+运行npm start后如果白屏或者出错，请手动刷新一次，导致的原因可能是browser-sync启动浏览器的时候还没有打包完成
+
 ## html
 集合了[gulp-file-include]('https://github.com/coderhaoxin/gulp-file-include')，可抽离出一部分公共静态的html片段，重复使用。
 ```html
