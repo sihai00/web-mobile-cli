@@ -11,8 +11,9 @@ program
 if (program.projectname) {
   const name = program.projectname
   const url = packages.repository.url
-
+  console.log(`git clone ${url} ${name}`)
   exec(`git clone ${url} ${name}`, function(error, stdout, stderr){
+    console.log('done!!!')
     if(error) {
       console.error('error: ' + error);
       return;
