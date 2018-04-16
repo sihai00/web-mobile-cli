@@ -1,5 +1,7 @@
 # web-mobile-cli
-可快速开发移动端h5的脚手架，采用scss搭配vw可适配不同手机尺寸且使用原生es7语法（可使用async..await等）和zepto，使原生开发的项目最小化。
+可快速开发移动端h5的脚手架，采用sass搭配vw可适配不同手机尺寸且使用原生es7语法（可使用async..await等）和zepto，使原生开发的项目最小化。
+
+> **主意**：由于在开发模式下没有对javascrpt代码转成es5（但打包后可在低版本浏览器运行），所以请在支持saync的浏览器上进行开发（最好最新的chrome，不支持ie），chrome:55+，ff52+，edge16，safari10.1+
 
 ## 目录
 - dist: 打包后文件（默认打包后为```dist```目录，默认浏览器打开首页为```dist/index.html```）
