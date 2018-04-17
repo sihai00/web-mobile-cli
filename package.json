@@ -39,5 +39,11 @@
   },
   "dependencies": {
     "commander": "^2.15.1"
-  }
+  },
+  "keywords": [
+    "web-mobile-cli",
+    "web-cli",
+    "mobile-cli",
+    "cli"
+  ],
 }
