@@ -3,22 +3,6 @@
 
 > **主意**：由于在开发模式下没有对javascrpt代码转成es5（但打包后可在低版本浏览器运行），所以请在支持saync的浏览器上进行开发（最好最新的chrome，不支持ie），chrome:55+，ff52+，edge16，safari10.1+
 
-## 目录
-- dist: 打包后文件（默认打包后为```dist```目录，默认浏览器打开首页为```dist/index.html```）
-- src
-  - assets: 资源文件
-  - html: （集成gulp-file-include）
-    - common: 公共html
-    - page.html
-  - js
-    - common：公共js
-    - page：页面js
-    - vender：第三方js库
-  - sass
-    - main.scss：公共scss文件
-    - page：页面scss
-- gulpfile: 配置文件
-
 ## 使用
 ``` bash
 # 全局安装
@@ -38,6 +22,22 @@ npm run build
 ```
 
 > **注意**：运行npm start后如果白屏或者出错，请手动刷新一次，导致的原因可能是browser-sync启动浏览器的时候还没有打包完成
+
+## 目录
+- dist: 打包后文件（默认打包后为```dist```目录，默认浏览器打开首页为```dist/index.html```）
+- src
+  - assets: 资源文件
+  - html: （集成gulp-file-include）
+    - common: 公共html
+    - page.html
+  - js
+    - common：公共js
+    - page：页面js
+    - vender：第三方js库
+  - sass
+    - main.scss：公共scss文件
+    - page：页面scss
+- gulpfile: 配置文件
 
 ## html
 集合了[gulp-file-include](https://github.com/coderhaoxin/gulp-file-include)，可抽离出一部分公共静态的html片段，重复使用。
