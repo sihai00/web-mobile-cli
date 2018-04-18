@@ -20,6 +20,13 @@ const uglifyjs = require('uglify-es')
 const composer = require('gulp-uglify/composer')
 const minify = composer(uglifyjs, console)
 
+// 获取端口
+const program = require('commander')
+program
+  .version(require('./package.json').version)
+  .option('-p, --port [port]', 'Add port')
+  .parse(process.argv)
+
 const options = {
   removeComments: true,//清除HTML注释
   collapseWhitespace: true,//压缩HTML
@@ -176,7 +183,9 @@ gulp.task('serve', ['build:debug'], function() {
       server: {
         baseDir: 'dist',
         index: './index.html'
-      }
+      },
+      port: program.port || 3000
+      // port: program.port || 3000
     })
   }, 100)
 

@@ -2,7 +2,7 @@
 可快速开发移动端h5的脚手架，采用sass搭配vw可适配不同手机尺寸且使用原生es7语法（可使用async..await等）和zepto，使原生开发的项目最小化。
 [使用教程](https://github.com/sihai00/blog/tree/master/2018-04-17/web-mobile-cli%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B)
 
-> **主意**：由于在开发模式下没有对javascrpt代码转成es5（但打包后可在低版本浏览器运行），所以请在支持saync的浏览器上进行开发（最好最新的chrome，不支持ie），chrome:55+，ff52+，edge16，safari10.1+
+> **注意**：由于在开发模式下没有对javascrpt代码转成es5（但打包后可在低版本浏览器运行），所以请在支持saync的浏览器上进行开发（最好最新的chrome，不支持ie），chrome:55+，ff52+，edge16，safari10.1+
 
 ## 使用
 ``` bash
@@ -17,6 +17,9 @@ npm install
 
 # 运行以下命令启动服务器 localhost:3000
 npm start
+
+也可以指定启动服务器的端口
+npm start -- -p 3001
 
 # 打包（dist文件）
 npm run build
