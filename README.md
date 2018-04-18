@@ -4,7 +4,7 @@
 
 > **注意**：由于在开发模式下没有对javascrpt代码转成es5（但打包后可在低版本浏览器运行），所以请在支持saync的浏览器上进行开发（最好最新的chrome，不支持ie），chrome:55+，ff52+，edge16，safari10.1+
 
-## 使用
+## 一：使用
 ``` bash
 # 全局安装
 npm install web-mobile-cli -g
@@ -18,7 +18,7 @@ npm install
 # 运行以下命令启动服务器 localhost:3000
 npm start
 
-也可以指定启动服务器的端口
+# 也可以指定启动服务器的端口
 npm start -- -p 3001
 
 # 打包（dist文件）
@@ -27,7 +27,7 @@ npm run build
 
 > **注意**：运行npm start后如果白屏或者出错，请手动刷新一次，导致的原因可能是browser-sync启动浏览器的时候还没有打包完成
 
-## 目录
+## 二：目录
 - dist: 打包后文件（默认打包后为```dist```目录，默认浏览器打开首页为```dist/index.html```）
 - src
   - assets: 资源文件
@@ -43,7 +43,7 @@ npm run build
     - page：页面scss
 - gulpfile: 配置文件
 
-## html
+## 三：html
 集合了[gulp-file-include](https://github.com/coderhaoxin/gulp-file-include)，可抽离出一部分公共静态的html片段，重复使用。
 ```html
 <!-- a.html -->
@@ -62,7 +62,7 @@ npm run build
 <div>b.html</div>
 ```
 
-## sass
+## 四：sass
 默认设计图为750，通过[vw方案](https://www.w3cplus.com/css/vw-for-layout.html)自动适配
 
 ```scss
@@ -72,7 +72,10 @@ $baseFontSize: 7.5;
 }
 ```
 
-## 生命周期
+## 五：javascript
+可以使用es7语法，打包后经过babel转译为es5
+
+### 5-1：生命周期
 - constructor
   - this.state：储存当前页面的变量
   - this.init：初始化
@@ -122,10 +125,7 @@ class index extends parent{
 }
 ```
 
-## javascript
-可以使用es7语法，打包后经过babel转译为es5
-
-### parent类
+### 5-2：parent类
 page中的js都继承自parent，parent可以存放一些全局的方法和变量给子类调用
 
 ```javascript
@@ -168,7 +168,7 @@ class parent {
 }
 ```
 
-#### getUrlParams：可获取地址栏的参数
+#### 5-2-1：getUrlParams获取地址栏的参数
 ```javascript
 this.getUrlParams('http://localhost:3000?a=1&b=2')
 
@@ -179,7 +179,7 @@ this.getUrlParams('http://localhost:3000?a=1&b=2')
 }
 ```
 
-#### fetch：请求数据
+#### 5-2-2：fetch请求数据
 请求错误做统一处理，调用this.fetch()后返回请求的数据
 - method：请求方法
 - url：请求地址
