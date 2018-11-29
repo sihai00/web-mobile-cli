@@ -53,8 +53,8 @@ const project = {
     watch: "src/js/**"
   },
   sass: {
-    main: "src/sass/main.scss",
-    build: "dist/css",
+    main: "src/main.scss",
+    build: "dist",
     watch: "src/sass/**"
   },
   html: {
