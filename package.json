@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
-    "@babel/preset-es2015": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.2.3",
     "browser-sync": "^2.23.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",

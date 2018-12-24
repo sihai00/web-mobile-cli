@@ -38,33 +38,35 @@ const options = {
   minifyCSS: true//压缩页面CSS
 }
 
+const buildName = 'www'
+
 const project = {
   concatjs: {
     main: ["src/js/common/zepto.js", "src/js/common/touch.js", "src/js/common/!(zepto|touch).js"],
-    build: "dist/js"
+    build: buildName + "/js"
   },
   vender: {
     main: "src/js/vender/*.js",
-    build: "dist/js/vender",
+    build: buildName + "/js/vender",
   },
   js: {
     main: "src/js/!(common|vender)/*.js",
-    build: "dist/js",
+    build: buildName + "/js",
     watch: "src/js/**"
   },
   sass: {
     main: "src/main.scss",
-    build: "dist",
+    build: buildName,
     watch: "src/sass/**"
   },
   html: {
     main: "src/html/*.html",
-    build: "dist",
+    build: buildName,
     watch: "src/html/**"
   },
   assets: {
     main: "src/assets/**",
-    build: "dist/assets"
+    build: buildName + "/assets"
   },
 }
 
@@ -86,7 +88,7 @@ gulp.task('concatjs', function() {
   gulp.src(project.concatjs.main)
     .pipe(concat('common.js'))
     .pipe(babel({
-      presets: ['@babel/preset-es2015'],
+        presets: ["@babel/preset-env"]
     }))
     .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
     .pipe(minify())
@@ -111,7 +113,7 @@ gulp.task('js:debug', function() {
 gulp.task('js', function() {
   gulp.src(project.js.main)
     .pipe(babel({
-      presets: ['@babel/preset-es2015'],
+      presets: ["@babel/preset-env"]
     }))
     .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
     .pipe(minify())
@@ -181,7 +183,7 @@ gulp.task('serve', ['build:debug'], function() {
   setTimeout(function(){
     browserSync.init({
       server: {
-        baseDir: 'dist',
+        baseDir: buildName,
         index: './index.html'
       },
       port: program.port || 3000
