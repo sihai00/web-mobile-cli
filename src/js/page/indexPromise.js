@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
   class index extends parent{
     constructor(){
       super()
-      
+
       this.state = {
         $list: $('#js-page'),
         arr: []
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // this.ready()
     }
     load(){
-      this.fetchData().then(v => {
+      this.fetchData().then(data => {
         this.state.arr = data.data
         this.render(this.state.arr)
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
       })
     }
     ready(){
-      
+
     }
     fetchData(){
       return this.fetch({

@@ -4,20 +4,20 @@
 <body>
   <!-- page -->
   <div class="index-page" id="js-page">
-    <i class="iconfont icon-jian"></i>index
+    <i class="iconfont icon-jian"></i>indexPrimise
   </div>
 
   <!-- nav -->
   <div class="nav-wrap">
     <div class="nav">
       @@loop('common/loop-nav.html', [
-        { "name": "index", "imgurl": "index-h", "url": "index" },
-        { "name": "indexPromise", "imgurl": "equipment", "url": "indexPromise" }
+      { "name": "index", "imgurl": "index", "url": "index" },
+      { "name": "indexPromise", "imgurl": "equipment-h", "url": "indexPromise" }
       ])
     </div>
     <div class="nav-stand"></div>
   </div>
 </body>
 @@include("common/script.html")
-<script src="js/page/index.js?rev=@@hash" defer></script>
+<script src="js/page/indexPromise.js?rev=@@hash" defer></script>
 </html>
