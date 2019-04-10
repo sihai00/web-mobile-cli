@@ -167,7 +167,7 @@ gulp.task('delete', function() {
 // assets
 gulp.task("assets", function() {
   gulp.src(project.assets.main)
-    .pipe(imagemin())
+    // .pipe(imagemin())
     .pipe(gulp.dest(project.assets.build))
     .pipe(reload({stream: true}))
 })
