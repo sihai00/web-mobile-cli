@@ -81,7 +81,6 @@ gulp.task('concatjs:debug', function() {
     .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
     // .pipe(minify())
     .pipe(gulp.dest(project.concatjs.build))
-    .pipe(reload({stream: true}))
 })
 // 生产环境
 gulp.task('concatjs', function() {
@@ -107,7 +106,6 @@ gulp.task('js:debug', function() {
     .pipe(sourcemaps.write('.'))
     // .pipe(minify())
     .pipe(gulp.dest(project.js.build))
-    .pipe(reload({stream: true}))
 })
 // 生产环境
 gulp.task('js', function() {
@@ -124,7 +122,6 @@ gulp.task('js', function() {
 gulp.task('vender', function() {
   gulp.src(project.vender.main)
     .pipe(gulp.dest(project.vender.build))
-    .pipe(reload({stream: true}))
 })
 
 // sass
@@ -137,7 +134,6 @@ gulp.task("sass:debug", function() {
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(project.sass.build))
-    .pipe(reload({stream: true}))
 })
 // 生产环境
 gulp.task("sass", function() {
@@ -155,7 +151,6 @@ gulp.task('html', function() {
     .pipe(rev())
     .pipe(htmlmin(options))
     .pipe(gulp.dest(project.html.build))
-    .pipe(reload({stream: true}))
 })
 
 // 删除
@@ -165,15 +160,21 @@ gulp.task('delete', function() {
 })
 
 // assets
-gulp.task("assets", function() {
+gulp.task("assets:debug", function() {
   gulp.src(project.assets.main)
     // .pipe(imagemin())
     .pipe(gulp.dest(project.assets.build))
-    .pipe(reload({stream: true}))
+})
+// assets
+// 生产环境
+gulp.task("assets", function() {
+  gulp.src(project.assets.main)
+  .pipe(imagemin())
+    .pipe(gulp.dest(project.assets.build))
 })
 
 // 开发环境打包
-gulp.task('build:debug', ['sass:debug', 'vender', 'concatjs:debug', 'js:debug',  'assets', 'html'])
+gulp.task('build:debug', ['sass:debug', 'vender', 'concatjs:debug', 'js:debug',  'assets:debug', 'html'])
 
 // 生产环境打包
 gulp.task('build', ['sass', 'vender', 'concatjs', 'js', 'assets', 'html'])
@@ -191,9 +192,9 @@ gulp.task('serve', ['build:debug'], function() {
     })
   }, 100)
 
-  gulp.watch(project.sass.watch, ['build:debug'])
-  gulp.watch(project.js.watch, ['build:debug'])
-  gulp.watch(project.html.watch, ['build:debug'])
-  gulp.watch(project.assets.main, ['build:debug'])
+  gulp.watch(project.sass.watch, ['build:debug']).on('change', reload)
+  gulp.watch(project.js.watch, ['build:debug']).on('change', reload)
+  gulp.watch(project.html.watch, ['build:debug']).on('change', reload)
+  gulp.watch(project.assets.main, ['build:debug']).on('change', reload)
   // gulp.watch(['dist/**', 'dist/*/**']).on('change', browserSync.reload)
 })
